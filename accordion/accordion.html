@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        font-family: sans-serif;
+        line-height: 1;
+      }
+      .accordion {
+        width: 700px;
+        margin: 50px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .item {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        column-gap: 20px;
+        row-gap: 20px;
+        box-shadow: 0 0 32px rgba(0, 0, 0, 0.1);
+        padding: 24px;
+      }
+      .number,
+      .title {
+        font-size: 24px;
+        font-weight: 500;
+      }
+      .number {
+        color: #868e96;
+      }
+      .number,
+      .title,
+      .icon {
+        cursor: pointer;
+      }
+      .icon {
+        width: 24px;
+        height: 24px;
+        stroke: #868e96;
+      }
+      .hidden-box {
+        grid-column: 2;
+        display: none;
+      }
+      .hidden-box p {
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+      .hidden-box ul {
+        margin-left: 20px;
+        color: #868e96;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      /* OPEN STATE */
+      .open .hidden-box {
+        display: block;
+      }
+      .open .title,
+      .open .number {
+        color: #087f5b;
+      }
+      .open .icon {
+        stroke: #087f5b;
+        transform: rotate(180deg);
+      }
+      .open {
+        border-top: 4px solid #087f5b;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="accordion">
+      <div class="item">
+        <div class="number">01</div>
+        <div class="title">Where are these chairs assembled?</div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+        <div class="hidden-box">
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati
+            ipsum aspernatur vel officia quibusdam magni debitis. Molestiae
+            itaque libero
+          </p>
+          <ul>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+            <li>
+              Aspernatur mollitia pariatur eum animi adipisci totam obcaecati
+            </li>
+            <li>rerum reiciendis nulla corporis saepe at</li>
+            <li>
+              laudantium nobis cum, suscipit neque similique labore atque.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="item open">
+        <div class="number">02</div>
+        <div class="title">How long do I have to return my chair?</div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+        <div class="hidden-box">
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati
+            ipsum aspernatur vel officia quibusdam magni debitis. Molestiae
+            itaque libero
+          </p>
+          <ul>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+            <li>
+              Aspernatur mollitia pariatur eum animi adipisci totam obcaecati
+            </li>
+            <li>rerum reiciendis nulla corporis saepe at</li>
+            <li>
+              laudantium nobis cum, suscipit neque similique labore atque.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="item">
+        <div class="number">03</div>
+        <div class="title">Do you ship to countries outside the EU?</div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+        <div class="hidden-box">
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati
+            ipsum aspernatur vel officia quibusdam magni debitis. Molestiae
+            itaque libero
+          </p>
+          <ul>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+            <li>
+              Aspernatur mollitia pariatur eum animi adipisci totam obcaecati
+            </li>
+            <li>rerum reiciendis nulla corporis saepe at</li>
+            <li>
+              laudantium nobis cum, suscipit neque similique labore atque.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const titles = document.querySelectorAll(".title");
+      const items = document.querySelectorAll(".item");
+      items.forEach((item) => {
+        item.addEventListener("click", function (e) {
+          // closeOpen();
+          item.classList.toggle("open");
+        });
+      });
+
+      // if we want to see only one item
+
+      // function closeOpen() {
+      //   items.forEach((item) => {
+      //     item.classList.remove("open");
+      //   });
+      // }
+    </script>
+  </body>
+</html>
