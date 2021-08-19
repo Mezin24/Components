@@ -49,6 +49,7 @@
         padding: 4px;
         width: 24px;
         height: 24px;
+        border-radius: 50%;
       }
       .arr:hover,
       .btn:hover {
@@ -56,17 +57,23 @@
       }
       .btn:hover {
         color: #fff;
-        border-radius: 50%;
       }
-      .arr:hover .array {
+      .arr:hover .arrow {
         stroke: #fff;
       }
-      /* BUG make arrow hover effect, add js. */
+      .active-btn {
+        background-color: #087f5b;
+        color: #fff;
+      }
+      .right:active,
+      .left:active {
+        background-color: #0ca678;
+      }
     </style>
   </head>
   <body>
     <div class="pagination">
-      <button class="arr">
+      <button class="arr left">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="arrow"
@@ -83,10 +90,10 @@
         </svg>
       </button>
       <button class="btn">1</button><button class="btn">2</button
-      ><button class="btn">3</button><button class="btn">4</button
+      ><button class="btn active-btn">3</button><button class="btn">4</button
       ><button class="btn">5</button><button class="btn">6</button
       ><span>...</span><button class="btn">23</button>
-      <button class="arr">
+      <button class="arr right">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="arrow"
@@ -103,5 +110,46 @@
         </svg>
       </button>
     </div>
+
+    <script>
+      const btns = document.querySelectorAll(".btn");
+      const right = document.querySelector(".right");
+      const left = document.querySelector(".left");
+      const pagination = document.querySelector(".pagination");
+
+      pagination.addEventListener("click", function (e) {
+        const target = e.target;
+        if (target.classList.contains("btn")) {
+          removeBtn();
+          target.classList.add("active-btn");
+        }
+      });
+
+      left.addEventListener("click", function (e) {
+        e.preventDefault();
+        btns.forEach((btn, i) => {
+          if (btn.classList.contains("active-btn") && i !== 0) {
+            removeBtn();
+            btns[i - 1].classList.add("active-btn");
+          }
+        });
+      });
+      right.addEventListener("click", function (e) {
+        e.preventDefault();
+        for (let i = 0; i < btns.length - 1; i++) {
+          if (btns[i].classList.contains("active-btn")) {
+            removeBtn();
+            btns[i + 1].classList.add("active-btn");
+            break;
+          }
+        }
+      });
+
+      function removeBtn() {
+        btns.forEach((btn) => {
+          btn.classList.remove("active-btn");
+        });
+      }
+    </script>
   </body>
 </html>
