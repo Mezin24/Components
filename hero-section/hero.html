@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Omnifood</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&display=swap");
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1;
+      }
+      .container {
+        width: 900px;
+        margin: 0 auto;
+      }
+      header {
+        height: 100vh;
+        position: relative;
+        /* background-color: red; */
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url(hero.jpg);
+        background-size: cover;
+        color: #fff;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 32px;
+        text-transform: uppercase;
+        font-weight: 900;
+        font-size: 20px;
+      }
+      .logo {
+      }
+      .nav {
+      }
+      .header-container {
+        width: 900px;
+        margin: 0 auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .header-text-inner {
+        width: 50%;
+        /* background: linear-gradient(to right bottom, black, blue); */
+      }
+      .title {
+        font-size: 36px;
+        line-height: 1.1;
+      }
+      .header-descr {
+        margin-top: 32px;
+        line-height: 1.5;
+      }
+      .header-action {
+        display: inline-block;
+        text-decoration: none;
+        background-color: #fd7e14;
+        color: #fff;
+        padding: 12px 24px;
+        border-radius: 6px;
+        font-weight: 500;
+        margin-top: 48px;
+      }
+      section {
+        margin-top: 96px;
+      }
+      section h2 {
+        margin-bottom: 32px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="container">
+        <div class="logo">logo</div>
+        <div class="nav">navigation</div>
+      </nav>
+      <div class="header-container">
+        <div class="header-text-inner">
+          <h1 class="title">
+            A healthy meal delivered to your door, every single day
+          </h1>
+          <p class="header-descr">
+            The smart 365-days-per-year food subscription that will make you eat
+            healthy again. Tailored to your personal tastes and nutritional
+            needs
+          </p>
+          <a href="#" class="header-action">Start eating well</a>
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="container">
+        <h2>Some other beatifull title</h2>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita
+          voluptatibus provident sequi rerum, molestiae eaque exercitationem
+          accusantium maxime, commodi nesciunt debitis temporibus fugiat odio
+          soluta facere. Eveniet eius doloribus nostrum!
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
